@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport"
+                content="width=device-width, .user-scalable=no, initial-scal=1.0, maximum-scale=1.0,minimum-scale=1.0" />
+        <!--2.利用js动态的改变不同手机端的font-size的值-->
+        <script src="js/lib-flex.js"></script>
+        <title>Document</title>
+        <link href="css/fenlei.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+        html {
+                font-size: 0.16rem;
+        }
+</style>
+
+<body>
+        <div class="warp">
+                <!-- 头部 -->
+                <div class="my-header">
+                        <div class="my-header-div">
+                                <a href="search.html"> <div class="my-header-div-div1"></div></a>
+                                <div class="my-header-div-div2">分类</div>
+                                <a href="index.html"><div class="my-header-div-div3"></div></a>
+                        </div>
+                </div>
+
+                <div class="my-div1">
+                        <!-- 左侧目录 -->
+                        <div class="my-div1-left" id="left">
+                                <div class="my-left-div">
+                                        <div class="my-divv">
+                                                <div class="my-divvv my-div-reset">
+                                                        <!-- <div class="my-div1-div1 swiper-slide" id="div-left0">新品</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left1">众筹</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left2">手机</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left3">电视</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left4">电脑</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left5">家电</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left6">路由</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left7">出行</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left8">穿戴</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left9">智能</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left10">电源</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left11">健康</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left12">灯具</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left13">儿童</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left14">插线板</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left15">音频</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left16">箱包</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left17">生活</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left18">配件</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left19">家装</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left20">礼品</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left21">服务</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left22">会员卡</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left23">米粉卡</div>                            
+                                        <div class="my-div1-div1 swiper-slide" id="div-left24">零售店</div>
+                                        <div class="my-div1-div1 swiper-slide" id="div-left25"></div>   
+                                        <div class="my-div1-div1 swiper-slide" id="div-left26"></div>                          -->
+                                                        <div v-for="(site,index) in sites" :key="index"
+                                                                :id="forId(index)" class="my-div1-div1 swiper-slide">
+                                                                {{ site.name }}</div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- 右侧目录 -->
+                        <div class="my-div1-right" id="right">
+                                <div class="my-right-div">
+                                        <div class="my-divv">
+                                                <div class="my-divvv">
+                                                        <div class="my-div1-div2 swiper-slide">
+                                                                <!-- 新品 -->
+                                                                <div class="div1">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 手机 ——" name2="小米9">
+                                                                        </bankuai1>
+                                                                        <bankuai2 name1="—— 家电 ——" name2="洗烘一体机">
+                                                                        </bankuai2>
+                                                                        <bankuai3 name1="—— 电脑 ——" name2="15.6'笔记本">
+                                                                        </bankuai3>
+                                                                </div>
+                                                                <!-- 众筹 -->
+                                                                <div class="div2">
+                                                                        <img1></img1>
+                                                                        <bankuai4 name1="—— 众筹好物 ——" name2="无线吸尘器">
+                                                                        </bankuai4>
+                                                                        <bankuai5 name1="—— 家庭装 ——" name2="最生活10条装">
+                                                                        </bankuai5>
+                                                                </div>
+                                                                <!-- 手机 -->
+                                                                <div class="div3">
+                                                                        <img1></img1>
+                                                                        <bankuai6 name1="—— 手机 ——" name2="小米9">
+                                                                        </bankuai6>
+                                                                        <bankuai2 name1="—— 红米Redim ——" name2="Redmi">
+                                                                        </bankuai2>
+                                                                        <bankuai3 name1="—— 移动4G+专区 ——"
+                                                                                name2="小米MIX 2s"></bankuai3>
+                                                                        <zhuanqu></zhuanqu>
+                                                                        <bankuai2 name1="—— 手机配件 ——" name2="以旧换新">
+                                                                        </bankuai2>
+                                                                </div>
+                                                                <!-- 电视 -->
+                                                                <div class="div4">
+                                                                        <img1></img1>
+                                                                        <bankuai2 name1="—— 电视 ——" name2="32-40英寸">
+                                                                        </bankuai2>
+                                                                        <zhuanqu></zhuanqu>
+                                                                        <bankuai2 name1="—— 盒子 ——" name2="盒子4">
+                                                                        </bankuai2>
+                                                                        <bankuai5 name1="—— 音响 ——" name2="小米电视音响">
+                                                                        </bankuai5>
+                                                                        <bankuai7 name1="—— 电视配件与会员 ——" name2="盒子4">
+                                                                        </bankuai7>
+                                                                </div>
+                                                                <!-- 笔记本 -->
+                                                                <div class="div5">
+                                                                        <img1></img1>
+                                                                        <bankuai4 name1="—— 电脑 ——" name2="小米Air 12.5'">
+                                                                        </bankuai4>
+                                                                        <zhuanqu></zhuanqu>
+                                                                        <bankuai4 name1="—— 电脑配件 ——" name2="鼠标/鼠标垫">
+                                                                        </bankuai4>
+                                                                </div>
+                                                                <!-- 家电 -->
+                                                                <div class="div6">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 家电 ——" name2="空调">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                        <bankuai1 name1="—— 厨房家电 ——" name2="电饭煲">
+                                                                        </bankuai1>
+
+                                                                </div>
+                                                                <!-- 路由 -->
+                                                                <div class="div7">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 路由器 ——" name2="路由4A">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                        <bankuai5 name1="—— 电力猫 ——" name2="电力猫  套装">
+                                                                        </bankuai5>
+                                                                        <bankuai5 name1="—— WiFi放大器 ——"
+                                                                                name2="小米WiFi放.."></bankuai5>
+                                                                </div>
+                                                                <!-- 出行 -->
+                                                                <div class="div8">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 出行 ——" name2="路由4A">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 穿戴 -->
+                                                                <div class="div9">
+                                                                        <img1></img1>
+                                                                        <bankuai3 name1="—— 穿戴 ——" name2="智能手表">
+                                                                        </bankuai3>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 智能 -->
+                                                                <div class="div10">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 智能 ——" name2="智能家庭">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 电源 -->
+                                                                <div class="div11">
+                                                                        <img1></img1>
+                                                                        <bankuai3 name1="—— 电源 ——" name2="移动电源">
+                                                                        </bankuai3>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 健康 -->
+                                                                <div class="div12">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 健康 ——" name2="剃须刀">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 灯具 -->
+                                                                <div class="div13">
+                                                                        <img1></img1>
+                                                                        <bankuai2 name1="—— 灯具 ——" name2="床头灯">
+                                                                        </bankuai2>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 健康 -->
+                                                                <div class="div14">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 儿童 ——" name2="儿童手表">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 插线板 -->
+                                                                <div class="div15">
+                                                                        <img1></img1>
+                                                                        <bankuai3 name1="—— 插线板 ——" name2="插线板">
+                                                                        </bankuai3>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 音频 -->
+                                                                <div class="div16">
+                                                                        <img1></img1>
+                                                                        <bankuai7 name1="—— 音频 ——" name2="蓝牙耳机">
+                                                                        </bankuai7>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 箱包 -->
+                                                                <div class="div17">
+                                                                        <img1></img1>
+                                                                        <bankuai2 name1="—— 箱包 ——" name2="旅行箱">
+                                                                        </bankuai2>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 生活 -->
+                                                                <div class="div18">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 生活 ——" name2="驱蚊器">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 配件 -->
+                                                                <div class="div19">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 配件 ——" name2="数据线">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 家装 -->
+                                                                <div class="div20">
+                                                                        <img1></img1>
+                                                                        <bankuai1 name1="—— 家装 ——" name2="客厅">
+                                                                        </bankuai1>
+                                                                        <zhuanqu></zhuanqu>
+                                                                </div>
+                                                                <!-- 礼品 -->
+                                                                <div class="div21">
+                                                                        <img1></img1>
+                                                                        <bankuai7 name1="—— 礼品 ——" name2="送人">
+                                                                        </bankuai7>
+                                                                </div>
+                                                                <!-- 特色服务 -->
+                                                                <div class="div22">
+                                                                        <img1></img1>
+                                                                        <bankuai7 name1="—— 特色服务 ——" name2="手机保障服务">
+                                                                        </bankuai7>
+                                                                </div>
+                                                                <!-- 会员卡 -->
+                                                                <div class="div23">
+                                                                        <img1></img1>
+                                                                        <bankuai5 name1="—— 会员卡 ——" name2="云空间服务">
+                                                                        </bankuai5>
+                                                                </div>
+                                                                <!-- 电话卡 -->
+                                                                <div class="div24">
+                                                                        <bankuai7 name1="—— 电话卡 ——" name2="日主卡">
+                                                                        </bankuai7>
+                                                                </div>
+                                                                <!-- 零售店 -->
+                                                                <div class="div25">
+                                                                        <bankuai3 name1="—— 零售店 ——" name2="小米之家">
+                                                                        </bankuai3>
+                                                                </div>
+
+                                                                <div class="div26"></div>
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="footer-fixed">
+                        <div class="footer-fixed-nav">
+                                <a href="index.html"><img src="img/footer_home.png" alt=""></a>
+                                <a href="index.html">首页</a>
+                        </div>
+
+                        <div class="footer-fixed-nav">
+                                <a href="fenlei.html"><img src="img/footer_hover_search.png" alt=""></a>
+                                <a href="fenlei.html">分类</a>
+                        </div>
+
+                        <div class="footer-fixed-nav">
+                                <a href="shopping.html"><img src="img/footer_shopping.png" alt=""></a>
+                                <a href="shopping.html">购物车</a>
+                        </div>
+
+                        <div class="footer-fixed-nav">
+                                <a href="my.html"> <img src="img/person.png" alt=""></a>
+                                <a href="my.html">我的</a>
+                        </div>
+
+                </div>
+
+        </div>
+</body>
+<script src="js/vue.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="dist/js/swiper.min.js"></script>
+<script type="text/javascript" src="js/fenlei.js"></script>
+
+</html>

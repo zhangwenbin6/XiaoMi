@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no ,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/shopping.css">
+	</head>
+
+	<body>
+		<div class="wrap" id="box">
+			<!-- 头部 -->
+			<div class="my-header">
+				<div class="my-header-left"><a href="index.html"><img src="img/下载 (1).png" alt=""></a></div>
+				<div class="my-header-center"><span>购物车</span></div>
+				<div class="my-header-right"><img src="img/下载.png" alt=""></div>
+			</div>
+
+			<!-- 顶部 -->
+			<div class="foot">
+				<div class="dataone">
+					<div class="dataone-left"><span>登陆后享受更大优惠</span></div>
+					<div class="dataone-right"><a href="login.html"><span>去登录 ></span></a></div>
+				</div>
+				<!-- 购物车 -->
+				<div class="shoppiong">
+
+					<div>
+					    <div class="main">
+							<ul class="list">
+								<!-- 列表循环 -->
+								<li v-for="(item,index) in json" @click.capture="mp(index,$event)">
+									<!-- 商家 -->
+									<p class="list-dp" v-show="item.show">
+										<span :class="[yuan1,{bg:item.select}]" @click.stop="dpSelected(index)"></span>
+										<span class="dp">{{item.sj}}</span>
+									</p>
+									<!-- 图片产品名称价格数量展示 -->
+									<div class="item" v-for="(pl,index) in json[index].items">
+										<!-- 选择按钮 -->
+										<p class="item-select">
+											<span :class="[yuan,{bg:pl.select},pl.animateAn]" @click.capture="selected(index,$event)"></span>
+										</p>
+										<!-- 商品图片 -->
+										<div class="item-img">
+											<img :src="pl.img" alt="">
+										</div>
+										<!-- 商品名称 -->
+										<div v-if="pl.id==index" class="item-text" :class="pl.animate">
+											<div class="sl">
+												<div class="sl-top">
+												<span @click="reduce(index)">-</span>
+												<input type="text" v-model="pl.sl">
+												<span @click="add(index)">+</span>
+											</div>
+												<p @click="del(index)" class="delete"><img src="img/下载 (2).png" style="margin-top:-0.1rem;"></p>
+											</div>
+											<div class="Hide" @click="Hide(index)">
+												完成
+											</div>
+										</div>
+
+										<div v-else class="item-text" :class="pl.animate">
+											<p>{{pl.cp}}</p>
+											<p>
+												<span class="item-jg">￥{{pl.jg}}</span> 
+												<span class="bj" @click='show(index)'>编辑</span>
+											</p>
+										</div>
+										<p class="item-sl">
+											x{{pl.sl}}
+										</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="footer">
+							<span :class="[yuan,{bg:allSelect}]" @click="AllSelect()"></span>
+							<span class="all">全选</span>
+							<span class="hj">合计: ￥{{allPrice}}</span>
+							<p class="up" @click='js()'>结算({{allNum}})</p>
+						</div>
+					</div>
+
+					<div class="box-foo">
+						<img src="img/e95ade2750a7fde92369b416c7d3176d.jpg" alt="">
+					</div>
+					<div class="box-let">
+						<div class="box-let-top">
+							<div class="box-let-top-left">
+								<img src="img/5ef90cebc46211a5a4c926840c8970b8!360x360.jpg" alt="">
+							</div>
+							<div class="box-let-top-right">
+								<img src="img/95eed534c497d4a1cdd58bab36eac337!360x360.jpg" alt="">
+							</div>
+
+						</div>
+						<div class="box-bottom-div">
+							<div class="box-bottom-left">
+								<span>小米自营运动耳机 防水...</span>
+								<p>￥169</p>
+							</div>
+							<div class="box-bottom-right">
+								<span>米兔轨道积木,电动火...</span>
+								<p>￥299</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="box-let">
+						<div class="box-let-top">
+							<div class="box-let-top-left">
+								<img src="img/f25f1575326928974ce19eca26f6a2e3.jpg" alt="">
+							</div>
+							<div class="box-let-top-right">
+								<img src="img/c833ed96323699ee5b52e0c8d5800e4e.jpg" alt="">
+							</div>
+
+						</div>
+						<div class="box-bottom-div">
+							<div class="box-bottom-left">
+								<span>90分轻薄鹅绒羽绒服</span>
+								<p>￥229</p>
+							</div>
+							<div class="box-bottom-right">
+								<span>小米米加自营液晶电视..</span>
+								<p>￥3129</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="box-let">
+						<div class="box-let-top">
+							<div class="box-let-top-left">
+								<img src="img/42dd4b353c31d85d7949b848b5fc541b.jpg" alt="">
+							</div>
+							<div class="box-let-top-right">
+								<img src="img/f3aa32e67e9a65793709b00ba82ec90a!360x360.jpg" alt="">
+							</div>
+
+						</div>
+						<div class="box-bottom-div">
+							<div class="box-bottom-left">
+								<span>米家电暖气</span>
+								<p>￥359</p>
+							</div>
+							<div class="box-bottom-right">
+								<span>小米双单元半入耳式儿...</span>
+								<p>￥69</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="box-let">
+						<div class="box-let-top">
+							<div class="box-let-top-left">
+								<img src="img/b723d4cb2878807e61ead56be6d07d89!360x360.jpg" alt="">
+							</div>
+							<div class="box-let-top-right">
+								<a href="details.html" style="width: 100%;height: 100%;"><img src="img/bdc93c68de77684a6d1d5237d34db1b5!360x360.jpg" alt=""></a>
+							</div>
+
+						</div>
+						<div class="box-bottom-div">
+							<div class="box-bottom-left">
+								<span>笔记本内胆包 12.5"</span>
+								<p>￥59</p>
+							</div>
+							<div class="box-bottom-right">
+								<span>13.3" i5 MX150银色</span>
+								<p>￥5399</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="box-let">
+						<div class="box-let-top">
+							<div class="box-let-top-left">
+								<img src="img/7c0adc9810058a7719a48394cc7d252d.jpg" alt="">
+							</div>
+							<div class="box-let-top-right">
+								<img src="img/0adeaf7cf8d012058f2084b3f2cf0563!360x360.jpg" alt="">
+							</div>
+
+						</div>
+						<div class="box-bottom-div">
+							<div class="box-bottom-left">
+								<span>米加无线开关</span>
+								<p>￥39</p>
+							</div>
+							<div class="box-bottom-right">
+								<span>小米电视 4A 65英寸</span>
+								<p>￥2999</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- 模态框 -->
+				<div class="big-wrap"v-if="flag">
+					<div class="motai">
+						<div class="motai-header">
+							<span>请确认支付</span>
+						</div>
+						<div class="motai-text">请支付{{ allPrice }}元</div>
+						<div class="motai-footer">
+							<div class="motai-footer-true"><span @click="handleSure">确认</span></div>
+							<div class="motai-footer-false"><span @click="handleSure">取消</span></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="big-wrap"v-if="jinggao">
+					<div class="motai">
+						<div class="motai-header">
+							<span>提示</span>
+						</div>
+						<div class="motai-text">{{ motaitext }}</div>
+						<div class="motai-footer">
+							<div class="motai-footer-true"><span  @click="handleTrue">确认</span></div>
+							<div class="motai-footer-false"><span @click="handleTrue">取消</span></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+	<script src="js/vue.js"></script>
+	<script src="js/lib-flex.js"></script>
+	<script type="text/javascript" src="js/shopping.js"></script>
+
+</html>

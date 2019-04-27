@@ -1,0 +1,113 @@
+.my-header-top{
+	width: 100%
+}
+a{
+	color: #646464;
+}
+.my-header-top img{
+	background-color: #EC971F;
+	
+}
+.my-header-log{
+	position: relative;
+	top: -14rem;
+	left: 3rem;
+}
+.my-header-log a{
+	margin-left: 2rem;
+	font-size: 2.5rem;
+	color: white;
+}
+.my-order{
+	height: 6rem;
+	width: 100%;
+	border-bottom: 1px solid black;
+	margin-top: -8rem;
+    margin-left: 3rem;
+    line-height: 7rem;
+}
+.my-order-left{
+	font-size: 2.6rem;	
+}
+.my-order-right{
+	font-size: 2.2rem;
+    margin-left: 40rem;
+}
+.my-order-bottom{
+	text-align: center;
+	margin-left: 3rem;
+}
+.my-order-bottom div{
+	display: inline-block;
+	margin: 7rem;
+	
+}
+.my-order-bottom img{
+	height: 5rem;
+	width:5rem;
+	margin-top: -2rem;
+}
+.my-order-bottom p{
+	font-size: 1.7rem;
+	margin-top: 2rem;
+}
+.my-table-font{
+	display: inline-block;
+	font-size: 2.5rem;
+	vertical-align: middle;
+	width: 50rem;
+	height: 8rem;
+	line-height: 8rem;
+	border-bottom: 1px solid #222222;
+	margin-left: 3rem;
+}
+
+.jian{
+	margin-left: 37rem;
+}
+.my-table-one{
+	margin-left: 3rem;
+	margin-top: -4rem;
+}
+.my-table-two{
+	margin-left: 3rem;
+}
+.my-table-three{
+	margin-left: 3rem;
+	margin-top: 2rem;
+	
+}
+.jian-last{
+	margin-left: 42rem;
+}
+.jian2{
+	margin-left: 38rem;
+}
+.my-footer{
+    width: 67rem;
+	height: 10rem;
+	margin-top: 9rem;
+	font-size: 2.5rem;
+	text-align: center;
+
+}
+.my-footer div{
+	display: inline-block;
+}
+.my-footer img{
+	height: 5rem;
+	width: 5rem;
+	margin-top: 1.5rem;
+}
+.my-footer-one{
+	width: 15rem;
+}
+.my-footer-two{
+	width: 15rem;
+}
+.my-footer-three{
+	width:15rem;
+}
+.my-footer-four{
+	width:15rem;
+}

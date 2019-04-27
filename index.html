@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+
+
+    <div id="wrap">
+        
+
+
+        <div class="box">
+            <!-- 顶部固定导航 -->
+        <div class="header-fixed"> 
+           
+                <div class="header-fixed-top" v-if="flag">
+                    <img src="img/2f1ced181109081f330c0b1f9f5f59ed.jpg">
+                    <div class="header-fixed-left" @click="handleClose">
+    
+                    </div>
+                    <a href="download.html">
+                        <div class="header-fixed-right">
+    
+                        </div>
+                    </a>
+                </div>
+              
+                <div class="header-fixed-search">
+    
+                    <div class="header-fixed-search-left">
+                        <img src="img/logo.png">
+                    </div>
+    
+                    <div class="header-fixed-search-middle">
+                        <a href="search.html"> <div class="header-fixed-search-middle-nav">
+                           <img src="img/search.png">
+                                <span>搜索商品名称</span>
+                        </div></a>
+                    </div>
+    
+                    <div class="header-fixed-search-right">
+                        <a href="my.html"><img src="img/person.png" alt=""></a>
+                    </div>
+    
+                </div>
+                
+                <div class="header-fixed-nav">
+                    <div class="nav-items"><span>推荐</span></div>
+                    <div class="nav-items"><span>米粉节</span></div>
+                    <div class="nav-items"><span>手机</span></div>
+                    <div class="nav-items"><span>智能</span></div>
+                    <div class="nav-items"><span>电视</span></div>
+                    <div class="nav-items"><span>家电</span></div>
+                    <div class="nav-items" @click="handleShow"><img src="img/down.png" alt=""></div>
+                    
+                    <div class="nav-items-end" v-if="flagShow">
+                        <div class="end-top">
+                            <span>全部</span>
+                            <img src="img/up.png" 
+                                 @click="handleUp">
+                        </div>
+                        <div class="end-nav end-nav-one">
+                            <span>推荐</span>
+                            <span>米粉节</span>
+                            <span>手机</span>
+                            <span>智能</span>
+                        </div>
+                        <div class="end-nav end_nav-two">
+                            <span>电视</span>
+                            <span>家电</span>
+                            <span>笔记本</span>
+                            <span>生活周边</span>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <!--滚动框-->
+            <div class="swiper-container ">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide "><img src="img/0ae6424e-1f6b-4113-6a1b-7c3d4a260ddf!720x360.webp" /></div>
+                    <div class="swiper-slide "><img src="img/5f54a9ac-c371-0699-a808-b6505dfc9505!720x360.webp" /></div>
+                    <div class="swiper-slide "><img src="img/5b83988e-e925-f617-72e5-b40b3f9704fd!720x360.webp" /></div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+            </div>
+            <!-- 新品发布...列表 -->
+            <div class="box-nav">
+                <img src="img/01e0772b-fcd9-6e03-cdf3-9bd08b2d2974!144x152.webp" alt="">
+                <img src="img/69f3581c-893a-c3a3-9f27-055146a62b7e!144x152.webp" alt="">
+                <img src="img/9f3a3e88-3b55-f7c8-b863-5867e23022c1!144x152.webp" alt="">
+                <img src="img/08a2268a-5554-7170-95d6-301ef8db4325!144x152.webp" alt="">
+                <img src="img/b05bf09b-a0a7-ef8f-e5ba-500b1549938c!144x152.webp" alt="">
+            </div>
+            <!-- 第一个图片公告区 -->
+            <div class="box-first-img">
+                <div class="box-first-left">
+                    <img src="img/f59bf09e-f87f-4b9d-1f37-05c402d64021!358x508.webp" alt="">
+                </div>
+                <div class="box-first-right">
+                    <img src="img/157934df-4740-a6d8-4057-909867ddd144!358x252.webp" alt="">
+                    <img src="img/2c6920e2-41be-a247-6e2e-edf88deb3764!358x252.webp" alt="">
+                </div>
+            </div>
+            <!-- 第二个图片公告区 -->
+            <div class="box-second-img">
+                <img src="img/bdb372a8-a8cd-d9dc-4b39-f778bb2ebd35!720x280.webp" alt="">
+            </div>
+
+            <!-- 第三个图片公告区-->
+            <div class="box-third-img">
+                <!-- 头部每日精选 -->
+                <div class="box-third-img-top">
+                    <img src="img/5df15531-f43d-4255-7e2b-006c7e19ef12!720x440.webp" alt="">
+                </div>
+                <!-- third商品分类展示 -->
+                <div class="box-third-img-nav">
+                    <div class="third-nav-left">
+
+                        <img class="third-img" src="img/1c3e0097-73a6-1788-96f7-2cdb58d82ba1!360x360.webp" alt="">
+
+                        <div class="third-span">
+                            <p>小米8 青春版</p>
+                            <p>潮流轻旗舰，超级夜景模式</p>
+                            <p><span>¥1399起</span><span>¥1699</span></p>
+                        </div>
+
+                        <div class="third-nav-img-two">
+                            <img src="img/6c1ea2766683269fd0e96ec599f42c52.png">
+                        </div>
+
+                    </div>
+
+                    <div class="third-nav-right">
+
+                        <img class="third-img" src="img/2dc1fd08-ee77-65dd-c52a-82ba382ae864!360x360.webp" alt="">
+
+                        <div class="third-span">
+                            <p>小米8 屏幕指纹版</p>
+                            <p>压感屏幕指纹，手持超级夜景</p>
+                            <p><span>¥2499起</span><span>¥2999</span></p>
+                        </div>
+
+                        <div class="third-nav-img-two">
+                            <img src="img/6c1ea2766683269fd0e96ec599f42c52.png">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="box-third-img-nav">
+                    <div class="third-nav-left">
+
+                        <img class="third-img" src="img/def98121-4b54-54a6-debb-e5c8a51dd4f7!360x360.webp" alt="">
+
+                        <div class="third-span">
+                            <p>黑鲨游戏手机</p>
+                            <p>双液冷，更能打</p>
+                            <p><span>¥3199起</span><span>¥3499</span></p>
+                        </div>
+
+                    </div>
+
+                    <div class="third-nav-right">
+                        <img class="third-img" src="img/a081da10-3758-e051-7a20-0de017f37476!360x360.webp" alt="">
+
+                        <div class="third-span">
+                            <p>红米6 屏幕指纹版</p>
+                            <p>小屏高性能的双摄手机</p>
+                            <p><span>¥729起</span><span>¥799</span></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box-third-img-nav">
+                    <div class="third-nav-left">
+                        <img class="third-img" src="img/1c3e0097-73a6-1788-96f7-2cdb58d82ba1!360x360.webp" alt="">
+
+                        <div class="third-span">
+                            <p>小米8 青春版</p>
+                            <p>潮流轻旗舰，超级夜景模式</p>
+                            <p><span>¥1399起</span><span>¥1699</span></p>
+                        </div>
+
+                        <div class="third-nav-img-two">
+                            <img src="img/6c1ea2766683269fd0e96ec599f42c52.png">
+                        </div>
+
+                    </div>
+
+                    <div class="third-nav-right">
+                        <img class="third-img" src="img/2dc1fd08-ee77-65dd-c52a-82ba382ae864!360x360.webp" alt="">
+
+                        <div class="third-span">
+                            <p>小米8 屏幕指纹版</p>
+                            <p>压感屏幕指纹，手持超级夜景</p>
+                            <p><span>¥2499起</span><span>¥2999</span></p>
+                        </div>
+
+                        <div class="third-nav-img-two">
+                            <img src="img/6c1ea2766683269fd0e96ec599f42c52.png">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="box-third-footer">
+                    <a href="#">更多小米手机产品></a>
+                </div>
+
+            </div>
+            <div class="up-top" @click="toTop">
+                <img src="img/top.451d650ecd.png" alt="">
+            </div>
+        </div>
+
+        <div class="footer-fixed">
+            <div class="footer-fixed-nav">
+                <a href="index.html"><img src="img/footer_hover_home.png" alt=""></a>
+                <a href="index.html">首页</a>
+            </div>
+
+            <div class="footer-fixed-nav">
+                <a href="fenlei.html"><img src="img/footer_search.png" alt=""></a>
+                <a href="fenlei.html">分类</a>
+            </div>
+
+            <div class="footer-fixed-nav">
+                <a href="shopping.html"><img src="img/footer_shopping.png" alt=""></a>
+                <a href="shopping.html">购物车</a>
+            </div>
+
+            <div class="footer-fixed-nav">
+                <a href="my.html"> <img src="img/person.png" alt=""></a>
+                <a href="my.html">我的</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+<script src="js/lib-flex.js"></script>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/swiper.min.js "></script>
+<script src="js/index.js"></script>
+<script src="js/indexclick.js"></script>
+
+</html>
